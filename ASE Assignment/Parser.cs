@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -10,7 +11,7 @@ namespace ASE_Assignment
     public class Parser : Form1
     {
 
-        public static void Method(string userInput, Shapes shapes)
+        public static void Method(string userInput, Shapes shapes, bool fill)
         {
             userInput = userInput.ToLower().Trim();
             string[] splitInput = userInput.Split(' ');
@@ -59,27 +60,61 @@ namespace ASE_Assignment
                         }
                         break;
                     case "rectangle":
-                        try
+                        if (fill = false)
                         {
-                            shapes.NotFilledRectangle(numParameter[0], numParameter[1]);
+                            try
+                            {
+                                shapes.NotFilledRectangle(numParameter[0], numParameter[1]);
+                            }
+                            catch
+                            {
+                                Console.WriteLine("Incorrect number of params for a circle please input one number");
+                                return;
+                            }
                         }
-                        catch
+                        else if (fill = true)
                         {
-                            Console.WriteLine("Incorrect number of params for rectangle, please input 2 numbers");
-                            return;
+                            try
+                            {
+                                shapes.FilledRectangle(numParameter[0], numParameter[1]);
+                            }
+                            catch
+                            {
+                                Console.WriteLine("Incorrect number of params for a circle please input one number");
+                                return;
+                            }
                         }
                         break;
+
+
                     case "circle":
-                        try
+                        if (fill = false)
                         {
-                            shapes.NotFilledCircle(numParameter[0]);
+                            try
+                            {
+                                shapes.NotFilledCircle(numParameter[0]);
+                            }
+                            catch
+                            {
+                                Console.WriteLine("Incorrect number of params for a circle please input one number");
+                                return;
+                            }
                         }
-                        catch
+                        else if(fill = true)
                         {
-                            Console.WriteLine("Incorrect number of params for a circle please input one number");
-                            return;
+                            try
+                            {
+                                shapes.FilledCircle(numParameter[0]);
+                            }
+                            catch
+                            {
+                                Console.WriteLine("Incorrect number of params for a circle please input one number");
+                                return;
+                            }
                         }
                         break;
+
+                                            
 
                 }
             }
@@ -92,3 +127,4 @@ namespace ASE_Assignment
 }
 
 
+  

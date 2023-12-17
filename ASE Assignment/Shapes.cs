@@ -8,9 +8,13 @@ namespace ASE_Assignment
         Pen pen;
         SolidBrush solidBrush;
         int positionX, positionY;
+        public Point[] trianglePoints;
+
 
         public Shapes(Graphics graphics)
         {
+            
+            trianglePoints = new Point[3];
             this.graphics = graphics;
             positionX = positionY = 0;
             pen = new Pen(Color.Red, 5);
@@ -74,6 +78,16 @@ namespace ASE_Assignment
         public void NotFilledCircle(int radius)
         {
             graphics.DrawEllipse(pen, positionX - radius, positionY - radius, radius * 2, radius * 2);
+        }
+
+
+        public void FilledCircle(int radius)
+        {
+            graphics.FillEllipse(solidBrush, positionX - radius, positionY - radius, radius * 2, radius * 2);
+        }
+        public void FilledRectangle(int width, int height)
+        {
+            graphics.FillRectangle(solidBrush, positionX - width / 2, positionY - height / 2, width, height);
         }
 
 

@@ -6,14 +6,18 @@ namespace ASE_Assignment
 {
     public partial class Form1 : Form
     {
-
-        Shapes shapes;
         Bitmap imageoutput = new Bitmap(500, 300);
+        Shapes shapes;
+        bool shapeFill;
+
+
 
         public Form1()
         {
             InitializeComponent();
             shapes = new Shapes(Graphics.FromImage(imageoutput));
+            textboxToShowFill.Text = "Shape fill off";
+
         }
 
         private void programInput_TextChanged(object sender, EventArgs e)
@@ -54,8 +58,19 @@ namespace ASE_Assignment
                         shapes.clearCanvas();
                         break;
 
+
+                    case "fill on":
+                        shapeFill = true;
+                        textboxToShowFill.Text = "Fill shape on";
+                        break;
+
+                    case "fill off":
+                        shapeFill = false;
+                        textboxToShowFill.Text = "Fill shape off";
+                        break;
+
                     default:
-                        Parser.Method(command, shapes);
+                        Parser.Method(command, shapes, shapeFill);
                         break;
                 }
 
