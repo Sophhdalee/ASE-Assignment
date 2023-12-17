@@ -41,7 +41,7 @@ namespace ASE_Assignment
                         }
                         catch
                         {
-                            Console.WriteLine("Incorrect number of params");
+                            Console.WriteLine("Incorrect number of params please input 2 numbers");
                             return;
                         }
                         break;
@@ -54,10 +54,33 @@ namespace ASE_Assignment
                         }
                         catch
                         {
-                            Console.WriteLine("Incorrect number of params");
+                            Console.WriteLine("Incorrect number of params please input 2 numbers");
                             return;
                         }
                         break;
+                    case "rectangle":
+                        try
+                        {
+                            shapes.NotFilledRectangle(numParameter[0], numParameter[1]);
+                        }
+                        catch
+                        {
+                            Console.WriteLine("Incorrect number of params for rectangle, please input 2 numbers");
+                            return;
+                        }
+                        break;
+                    case "circle":
+                        try
+                        {
+                            shapes.NotFilledCircle(numParameter[0]);
+                        }
+                        catch
+                        {
+                            Console.WriteLine("Incorrect number of params for a circle please input one number");
+                            return;
+                        }
+                        break;
+
                 }
             }
             else

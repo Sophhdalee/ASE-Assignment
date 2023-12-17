@@ -45,6 +45,39 @@ namespace ASE_Assignment
             pen = new Pen(Color.Red, 5);
             solidBrush = new SolidBrush(Color.Red);
         }
+
+        public void bluePen()
+        {
+            pen = new Pen(Color.Blue, 5);
+            solidBrush = new SolidBrush(Color.Blue);
+        }
+        public void yellowPen()
+        {
+            pen = new Pen(Color.Yellow, 5);
+            solidBrush = new SolidBrush(Color.Yellow);
+        }
+
+        public void blackPen()
+        {
+            pen = new Pen(Color.Black, 5);
+            solidBrush = new SolidBrush(Color.Black);
+        }
+        public void greenPen()
+        {
+            pen = new Pen(Color.Green, 5);
+            solidBrush = new SolidBrush(Color.Green);
+        }
+        public void NotFilledRectangle(int width, int height)
+        {
+            graphics.DrawRectangle(pen, positionX - width / 2, positionY - height / 2, width, height);
+        }
+        public void NotFilledCircle(int radius)
+        {
+            graphics.DrawEllipse(pen, positionX - radius, positionY - radius, radius * 2, radius * 2);
+        }
+
+
+
     }
 }
 

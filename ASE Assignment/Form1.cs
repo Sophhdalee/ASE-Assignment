@@ -20,15 +20,12 @@ namespace ASE_Assignment
         {
 
         }
-
         private void commandLine_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
             {
                 String command;
                 command = inputTextbox.Text.ToLower().Trim();
-
-
                 switch (command)
                 {
                     case "reset":
@@ -38,16 +35,28 @@ namespace ASE_Assignment
                     case "red pen":
                         shapes.redPen();
                         break;
+                    case "green pen":
+                        shapes.greenPen();
+                        break;
+
+                    case "black pen":
+                        shapes.blackPen();
+                        break;
+
+                    case "yellow pen":
+                        shapes.yellowPen();
+                        break;
+                    case "blue pen":
+                        shapes.bluePen();
+                        break;
 
                     case "clear":
- 
                         shapes.clearCanvas();
                         break;
 
                     default:
- 
-                    Parser.Method(command, shapes);
-                     break;
+                        Parser.Method(command, shapes);
+                        break;
                 }
 
                 inputTextbox.Text = "";
