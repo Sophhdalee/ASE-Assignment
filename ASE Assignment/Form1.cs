@@ -69,8 +69,24 @@ namespace ASE_Assignment
                         textboxToShowFill.Text = "Fill shape off";
                         break;
 
+                    case "drwato":
+                        textboxForSyntaxErrors.Text = "Incorrect number of params please input 2 numbers";
+                        break;
+                    case "moveto":
+                        textboxForSyntaxErrors.Text = "Incorrect number of params please input 2 numbers";
+                        break;
+                    case "circle":
+                        textboxForSyntaxErrors.Text = "Incorrect number of params please input 1 numbers";
+                        break;
+                    case "rectangle":
+                        textboxForSyntaxErrors.Text = "Incorrect number of params please input 2 numbers";
+                        break;
+                    case "triangle":
+                        textboxForSyntaxErrors.Text = "Incorrect number of params please input numbers";
+                        break;
+
                     default:
-                        Parser.Method(command, shapes, shapeFill);
+                        Parser.Method(command, shapes, shapeFill, textboxForSyntaxErrors);
                         break;
                 }
 
@@ -101,6 +117,11 @@ namespace ASE_Assignment
         }
 
         private void buttonToLoad_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textboxForSyntaxErrors_TextChanged(object sender, EventArgs e)
         {
 
         }

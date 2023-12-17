@@ -11,7 +11,7 @@ namespace ASE_Assignment
     public class Parser : Form1
     {
 
-        public static void Method(string userInput, Shapes shapes, bool fill)
+        public static void Method(string userInput, Shapes shapes, bool fill, RichTextBox textboxForSyntaxErrors)
         {
             userInput = userInput.ToLower().Trim();
             string[] splitInput = userInput.Split(' ');
@@ -30,6 +30,7 @@ namespace ASE_Assignment
                 }
                 catch
                 {
+                    textboxForSyntaxErrors.Text = "invalid parameters, they must be numbers";
                     return;
                 }
                 switch (splitInput[0])
@@ -42,7 +43,9 @@ namespace ASE_Assignment
                         }
                         catch
                         {
+                            
                             Console.WriteLine("Incorrect number of params please input 2 numbers");
+                            textboxForSyntaxErrors.Text = "Incorrect number of params please input 2 numbers";
                             return;
                         }
                         break;
@@ -56,6 +59,7 @@ namespace ASE_Assignment
                         catch
                         {
                             Console.WriteLine("Incorrect number of params please input 2 numbers");
+                            textboxForSyntaxErrors.Text = "Incorrect number of params please input numbers";
                             return;
                         }
                         break;
@@ -69,6 +73,7 @@ namespace ASE_Assignment
                             catch
                             {
                                 Console.WriteLine("Incorrect number of params for a circle please input one number");
+                                textboxForSyntaxErrors.Text = "Incorrect number of params please input numbers";
                                 return;
                             }
                         }
@@ -81,6 +86,7 @@ namespace ASE_Assignment
                             catch
                             {
                                 Console.WriteLine("Incorrect number of params for a circle please input one number");
+                                textboxForSyntaxErrors.Text = "Incorrect number of params please input numbers";
                                 return;
                             }
                         }
@@ -97,6 +103,7 @@ namespace ASE_Assignment
                             catch
                             {
                                 Console.WriteLine("Incorrect number of params for a circle please input one number");
+                                textboxForSyntaxErrors.Text = "Incorrect number of params please input numbers";
                                 return;
                             }
                         }
@@ -109,6 +116,7 @@ namespace ASE_Assignment
                             catch
                             {
                                 Console.WriteLine("Incorrect number of params for a circle please input one number");
+                                textboxForSyntaxErrors.Text = "Incorrect number of params please input numbers";
                                 return;
                             }
                         }
@@ -120,7 +128,7 @@ namespace ASE_Assignment
             }
             else
             {
-                //invalid command
+                    textboxForSyntaxErrors.Text = "invalid command";
             }
         }
     }

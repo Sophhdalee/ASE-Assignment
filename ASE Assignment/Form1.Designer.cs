@@ -40,6 +40,7 @@
             // 
             // inputTextbox
             // 
+            this.inputTextbox.BackColor = System.Drawing.Color.Fuchsia;
             this.inputTextbox.Font = new System.Drawing.Font("Arial Narrow", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.inputTextbox.Location = new System.Drawing.Point(29, 315);
             this.inputTextbox.Name = "inputTextbox";
@@ -52,7 +53,7 @@
             // 
             // longInputTextbox
             // 
-            this.longInputTextbox.BackColor = System.Drawing.SystemColors.Window;
+            this.longInputTextbox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.longInputTextbox.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.longInputTextbox.Location = new System.Drawing.Point(29, 12);
             this.longInputTextbox.Name = "longInputTextbox";
@@ -63,38 +64,45 @@
             // 
             // buttonToLoad
             // 
+            this.buttonToLoad.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.buttonToLoad.Location = new System.Drawing.Point(616, 314);
             this.buttonToLoad.Name = "buttonToLoad";
             this.buttonToLoad.Size = new System.Drawing.Size(323, 23);
             this.buttonToLoad.TabIndex = 3;
             this.buttonToLoad.Text = "Load Image";
-            this.buttonToLoad.UseVisualStyleBackColor = true;
+            this.buttonToLoad.UseVisualStyleBackColor = false;
             this.buttonToLoad.Click += new System.EventHandler(this.buttonToLoad_Click);
             // 
             // buttonToSave
             // 
+            this.buttonToSave.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.buttonToSave.Location = new System.Drawing.Point(307, 314);
             this.buttonToSave.Name = "buttonToSave";
             this.buttonToSave.Size = new System.Drawing.Size(303, 23);
             this.buttonToSave.TabIndex = 4;
             this.buttonToSave.Text = "Save Image";
-            this.buttonToSave.UseVisualStyleBackColor = true;
+            this.buttonToSave.UseVisualStyleBackColor = false;
             // 
             // textboxForSyntaxErrors
             // 
+            this.textboxForSyntaxErrors.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.textboxForSyntaxErrors.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textboxForSyntaxErrors.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textboxForSyntaxErrors.ForeColor = System.Drawing.Color.Red;
-            this.textboxForSyntaxErrors.Location = new System.Drawing.Point(796, 24);
+            this.textboxForSyntaxErrors.Location = new System.Drawing.Point(429, 15);
             this.textboxForSyntaxErrors.Name = "textboxForSyntaxErrors";
-            this.textboxForSyntaxErrors.Size = new System.Drawing.Size(143, 45);
+            this.textboxForSyntaxErrors.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.textboxForSyntaxErrors.Size = new System.Drawing.Size(499, 28);
             this.textboxForSyntaxErrors.TabIndex = 5;
             this.textboxForSyntaxErrors.Text = "";
+            this.textboxForSyntaxErrors.TextChanged += new System.EventHandler(this.textboxForSyntaxErrors_TextChanged);
             // 
             // textboxToShowFill
             // 
             this.textboxToShowFill.AutoSize = true;
+            this.textboxToShowFill.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.textboxToShowFill.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textboxToShowFill.ForeColor = System.Drawing.SystemColors.ControlText;
             this.textboxToShowFill.Location = new System.Drawing.Point(312, 15);
             this.textboxToShowFill.Name = "textboxToShowFill";
             this.textboxToShowFill.Size = new System.Drawing.Size(15, 16);
@@ -104,7 +112,7 @@
             // 
             // drawingOutput
             // 
-            this.drawingOutput.BackColor = System.Drawing.SystemColors.Window;
+            this.drawingOutput.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.drawingOutput.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.drawingOutput.Location = new System.Drawing.Point(307, 12);
             this.drawingOutput.Name = "drawingOutput";
