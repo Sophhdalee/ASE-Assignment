@@ -1,11 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace ASE_Assignment
@@ -14,12 +8,12 @@ namespace ASE_Assignment
     {
 
         Shapes shapes;
-        Bitmap canvasBitmap = new Bitmap(500, 300);
+        Bitmap imageoutput = new Bitmap(500, 300);
 
         public Form1()
         {
             InitializeComponent();
-            shapes = new Shapes(Graphics.FromImage(canvasBitmap));
+            shapes = new Shapes(Graphics.FromImage(imageoutput));
         }
 
         private void programInput_TextChanged(object sender, EventArgs e)
@@ -34,19 +28,28 @@ namespace ASE_Assignment
                 String command;
                 command = inputTextbox.Text.ToLower().Trim();
 
-                if (command.Equals("reset") == true)
-                {
-                    shapes.resetCanvas();
-                }
-                else if (command.Equals("clear") == true)
-                {
-                    shapes.clearCanvas();
 
-                }
-                else if (command.Equals("pen red") == true)
+                switch (command)
                 {
-                    shapes.redPen();
+                    case "reset":
+                        shapes.resetCanvas();
+                        break;
+
+                    case "red pen":
+                        shapes.redPen();
+                        break;
+
+                    case "clear":
+ 
+                        shapes.clearCanvas();
+                        break;
+
+                    default:
+ 
+                    Parser.Method(command, shapes);
+                     break;
                 }
+
                 inputTextbox.Text = "";
                 Refresh();
             }
@@ -55,7 +58,7 @@ namespace ASE_Assignment
         private void outputCanvas_Paint(object sender, PaintEventArgs e)
         {
             Graphics graphics = e.Graphics;
-            graphics.DrawImageUnscaled(canvasBitmap, 0, 0);
+            graphics.DrawImageUnscaled(imageoutput, 0, 0);
         }
 
         private void commandLine_TextChanged(object sender, EventArgs e)
