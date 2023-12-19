@@ -118,12 +118,17 @@ namespace ASE_Assignment
 
         private void buttonToLoad_Click(object sender, EventArgs e)
         {
-
+            LoadLongInput.LoadLongCommands(longInputTextbox);
         }
 
         private void textboxForSyntaxErrors_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void buttonToSave_Click(object sender, EventArgs e)
+        {
+            SaveLongInput.SaveLongCommands(longInputTextbox);
         }
     }
 }

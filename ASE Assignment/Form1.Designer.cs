@@ -82,6 +82,7 @@
             this.buttonToSave.TabIndex = 4;
             this.buttonToSave.Text = "Save Image";
             this.buttonToSave.UseVisualStyleBackColor = false;
+            this.buttonToSave.Click += new System.EventHandler(this.buttonToSave_Click);
             // 
             // textboxForSyntaxErrors
             // 

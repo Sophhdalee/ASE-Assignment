@@ -16,6 +16,8 @@ namespace ASE_Assignment
             userInput = userInput.ToLower().Trim();
             string[] splitInput = userInput.Split(' ');
 
+
+
             if (splitInput.Length == 2)
             {
                 string[] parameter = splitInput[1].Split(',');
@@ -32,82 +34,82 @@ namespace ASE_Assignment
                 {
                     textboxForSyntaxErrors.Text = "invalid parameters, they must be numbers";
                     return;
-                }
-                switch (splitInput[0])
-                {
-                    case "drawto":
-                        try
-                        {
-                            shapes.drawTo(numParameter[0], numParameter[1]);
-                            Console.WriteLine("Pen drawn");
-                        }
-                        catch
-                        {
-                            
-                            Console.WriteLine("Incorrect number of params please input 2 numbers");
-                            textboxForSyntaxErrors.Text = "Incorrect number of params please input 2 numbers";
-                            return;
-                        }
-                        break;
+                }             
 
-                    case "moveto":
-                        try
-                        {
-                            shapes.moveTo(numParameter[0], numParameter[1]);
-                            Console.WriteLine("Pen drawn");
-                        }
-                        catch
-                        {
-                            Console.WriteLine("Incorrect number of params please input 2 numbers");
-                            textboxForSyntaxErrors.Text = "Incorrect number of params please input numbers";
-                            return;
-                        }
-                        break;
-                    case "rectangle":
-                        if (fill = false)
-                        {
+
+                    switch (splitInput[0])
+                    {
+                        case "drawto":
                             try
                             {
-                                shapes.NotFilledRectangle(numParameter[0], numParameter[1]);
+                                shapes.drawTo(numParameter[0], numParameter[1]);
+                                Console.WriteLine("Pen drawn");
                             }
                             catch
                             {
-                                Console.WriteLine("Incorrect number of params for a circle please input one number");
+
+                                Console.WriteLine("Incorrect number of params please input 2 numbers");
+                                textboxForSyntaxErrors.Text = "Incorrect number of params please input 2 numbers";
+                                return;
+                            }
+                            break;
+
+                        case "moveto":
+                            try
+                            {
+                                shapes.moveTo(numParameter[0], numParameter[1]);
+                                Console.WriteLine("Pen drawn");
+                            }
+                            catch
+                            {
+                                Console.WriteLine("Incorrect number of params please input 2 numbers");
                                 textboxForSyntaxErrors.Text = "Incorrect number of params please input numbers";
                                 return;
                             }
-                        }
+                            break;
+                        case "rectangle":
+                            if (fill = false)
+                            {
+                                try
+                                {
+                                    shapes.NotFilledRectangle(numParameter[0], numParameter[1]);
+                                }
+                                catch
+                                {
+                                    Console.WriteLine("Incorrect number of params for a circle please input one number");
+                                    textboxForSyntaxErrors.Text = "Incorrect number of params please input numbers";
+                                    return;
+                                }
+                            }
+                            else if (fill = true)
+                            {
+                                try
+                                {
+                                    shapes.FilledRectangle(numParameter[0], numParameter[1]);
+                                }
+                                catch
+                                {
+                                    Console.WriteLine("Incorrect number of params for a circle please input one number");
+                                    textboxForSyntaxErrors.Text = "Incorrect number of params please input numbers";
+                                    return;
+                                }
+                            }
+                            break;
+                        case "circle":
+                            if (fill = false)
+                            {
+                                try
+                                    {
+                                    shapes.NotFilledCircle(numParameter[0]);
+                                   }
+                                catch
+                                    {
+                                    Console.WriteLine("Incorrect number of params for a circle please input one number");
+                                    textboxForSyntaxErrors.Text = "Incorrect number of params please input numbers";
+                                    return;
+                                }
+                            }
                         else if (fill = true)
-                        {
-                            try
-                            {
-                                shapes.FilledRectangle(numParameter[0], numParameter[1]);
-                            }
-                            catch
-                            {
-                                Console.WriteLine("Incorrect number of params for a circle please input one number");
-                                textboxForSyntaxErrors.Text = "Incorrect number of params please input numbers";
-                                return;
-                            }
-                        }
-                        break;
-
-
-                    case "circle":
-                        if (fill = false)
-                        {
-                            try
-                            {
-                                shapes.NotFilledCircle(numParameter[0]);
-                            }
-                            catch
-                            {
-                                Console.WriteLine("Incorrect number of params for a circle please input one number");
-                                textboxForSyntaxErrors.Text = "Incorrect number of params please input numbers";
-                                return;
-                            }
-                        }
-                        else if(fill = true)
                         {
                             try
                             {
@@ -122,14 +124,18 @@ namespace ASE_Assignment
                         }
                         break;
 
-                                            
-
+                        default:
+                        textboxForSyntaxErrors.Text = "invalid command";
+                        break;
                 }
             }
+            
             else
             {
-                    textboxForSyntaxErrors.Text = "invalid command";
+                textboxForSyntaxErrors.Text = "invalid command";
             }
+
+
         }
     }
 }

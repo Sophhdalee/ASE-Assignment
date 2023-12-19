@@ -8,30 +8,27 @@ namespace ASE_Assignment
         Pen pen;
         SolidBrush solidBrush;
         int positionX, positionY;
-        public Point[] trianglePoints;
 
 
         public Shapes(Graphics graphics)
         {
-            
-            trianglePoints = new Point[3];
             this.graphics = graphics;
             positionX = positionY = 0;
             pen = new Pen(Color.Red, 5);
             solidBrush = new SolidBrush(Color.Black);
         }
 
-        public void drawTo(int moveToX, int moveToY)
+        public void drawTo(int moveToXCoord, int moveToYCoord)
         {
-            graphics.DrawLine(pen, positionX, positionY, moveToX, moveToY);
-            positionX = moveToX;
-            positionY = moveToY;
+            graphics.DrawLine(pen, positionX, positionY, moveToXCoord, moveToYCoord);
+            positionX = moveToXCoord;
+            positionY = moveToYCoord;
         }
 
-        public void moveTo(int toX, int toY)
+        public void moveTo(int moveToXCoord, int moveToYCoord)
         {
-            positionX = toX;
-            positionY = toY;
+            positionX = moveToXCoord;
+            positionY = moveToYCoord;
         }
 
         public void clearCanvas()
@@ -71,6 +68,8 @@ namespace ASE_Assignment
             pen = new Pen(Color.Green, 5);
             solidBrush = new SolidBrush(Color.Green);
         }
+
+
         public void NotFilledRectangle(int width, int height)
         {
             graphics.DrawRectangle(pen, positionX - width / 2, positionY - height / 2, width, height);
