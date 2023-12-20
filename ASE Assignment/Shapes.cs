@@ -5,48 +5,63 @@ namespace ASE_Assignment
     public class Shapes
     {
         Graphics graphics;
-        Pen pen;
-        SolidBrush solidBrush;
-        int positionX, positionY;
+        Pen pen = new Pen(Color.Red, 5);
+        SolidBrush solidBrush = new SolidBrush(Color.Red);
+        int penPositionX, penPositionY;
 
 
         public Shapes(Graphics graphics)
         {
             this.graphics = graphics;
-            positionX = positionY = 0;
-            pen = new Pen(Color.Red, 5);
-            solidBrush = new SolidBrush(Color.Black);
+            penPositionX = 0;
+            penPositionY = 0;
         }
 
-        public void drawTo(int moveToXCoord, int moveToYCoord)
+        public void drawstraightLineTo(int goToXCoord, int goToYCoord)
         {
-            graphics.DrawLine(pen, positionX, positionY, moveToXCoord, moveToYCoord);
-            positionX = moveToXCoord;
-            positionY = moveToYCoord;
+            graphics.DrawLine(pen, penPositionX, penPositionY, goToXCoord, goToYCoord);
+            penPositionX = goToXCoord;
+            penPositionY = goToYCoord;
         }
 
-        public void moveTo(int moveToXCoord, int moveToYCoord)
+        public void movePenToCoords(int goToXCoord, int goToYCoord)
         {
-            positionX = moveToXCoord;
-            positionY = moveToYCoord;
+            penPositionX = goToXCoord;
+            penPositionY = goToYCoord;
         }
 
         public void clearCanvas()
         {
             graphics.Clear(Color.Transparent);
-            positionX = positionY = 0;
+            penPositionX = penPositionY = 0;
         }
 
         public void resetCanvas()
         {
-            positionX = positionY = 0;
+            penPositionX = penPositionY = 0;
+        }
+
+        public void DrawNotFilledRectangle(int width, int height)
+        {
+            graphics.DrawRectangle(pen, penPositionX - width / 2, penPositionY - height / 2, width, height);
+        }
+        public void DrawNotFilledCircle(int radius)
+        {
+            graphics.DrawEllipse(pen, penPositionX - radius, penPositionY - radius, radius * 2, radius * 2);
+        }
+        public void DrawFilledCircle(int radius)
+        {
+            graphics.FillEllipse(solidBrush, penPositionX - radius, penPositionY - radius, radius * 2, radius * 2);
+        }
+        public void DrawFilledRectangle(int width, int height)
+        {
+            graphics.FillRectangle(solidBrush, penPositionX - width / 2, penPositionY - height / 2, width, height);
         }
         public void redPen()
         {
             pen = new Pen(Color.Red, 5);
             solidBrush = new SolidBrush(Color.Red);
         }
-
         public void bluePen()
         {
             pen = new Pen(Color.Blue, 5);
@@ -57,7 +72,6 @@ namespace ASE_Assignment
             pen = new Pen(Color.Yellow, 5);
             solidBrush = new SolidBrush(Color.Yellow);
         }
-
         public void blackPen()
         {
             pen = new Pen(Color.Black, 5);
@@ -68,27 +82,6 @@ namespace ASE_Assignment
             pen = new Pen(Color.Green, 5);
             solidBrush = new SolidBrush(Color.Green);
         }
-
-
-        public void NotFilledRectangle(int width, int height)
-        {
-            graphics.DrawRectangle(pen, positionX - width / 2, positionY - height / 2, width, height);
-        }
-        public void NotFilledCircle(int radius)
-        {
-            graphics.DrawEllipse(pen, positionX - radius, positionY - radius, radius * 2, radius * 2);
-        }
-
-
-        public void FilledCircle(int radius)
-        {
-            graphics.FillEllipse(solidBrush, positionX - radius, positionY - radius, radius * 2, radius * 2);
-        }
-        public void FilledRectangle(int width, int height)
-        {
-            graphics.FillRectangle(solidBrush, positionX - width / 2, positionY - height / 2, width, height);
-        }
-
 
 
     }

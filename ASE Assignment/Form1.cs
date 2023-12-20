@@ -8,7 +8,7 @@ namespace ASE_Assignment
     {
         Bitmap imageoutput = new Bitmap(500, 300);
         Shapes shapes;
-        bool shapeFill;
+        bool shapeFill = false;
 
 
 
@@ -20,76 +20,71 @@ namespace ASE_Assignment
 
         }
 
-        private void programInput_TextChanged(object sender, EventArgs e)
-        {
 
-        }
         private void commandLine_KeyDown(object sender, KeyEventArgs e)
         {
+
+
             if (e.KeyCode == Keys.Enter)
             {
-                String command;
-                command = inputTextbox.Text.ToLower().Trim();
-                switch (command)
-                {
-                    case "reset":
-                        shapes.resetCanvas();
-                        break;
+                textboxForSyntaxErrors.Text = "";
+                string userInput = inputTextbox.Text.ToLower().Trim();
+                string longUserInput = longInputTextbox.Text;
 
-                    case "red pen":
-                        shapes.redPen();
+                switch (userInput)
+                    {
+                        case "reset":
+                            shapes.resetCanvas();
+                            break;
+                        case "red pen":
+                            shapes.redPen();
+                            break;
+                        case "green pen":
+                            shapes.greenPen();
+                            break;
+                        case "black pen":
+                            shapes.blackPen();
+                            break;
+                        case "yellow pen":
+                            shapes.yellowPen();
+                            break;
+                        case "blue pen":
+                            shapes.bluePen();
+                            break;
+                        case "clear":
+                            shapes.clearCanvas();
+                            break;
+                        case "fill on":
+                            shapeFill = true;
+                            textboxToShowFill.Text = "Fill shape on";
+                            break;
+                        case "fill off":
+                            shapeFill = false;
+                            textboxToShowFill.Text = "Fill shape off";
+                            break;
+                        case "drwato":
+                            textboxForSyntaxErrors.Text = "Incorrect number of params please input 2 numbers";
+                            break;
+                        case "moveto":
+                            textboxForSyntaxErrors.Text = "Incorrect number of params please input 2 numbers";
+                            break;
+                        case "circle":
+                            textboxForSyntaxErrors.Text = "Incorrect number of params please input 1 numbers";
+                            break;
+                        case "rectangle":
+                            textboxForSyntaxErrors.Text = "Incorrect number of params please input 2 numbers";
+                            break;
+                        case "triangle":
+                            textboxForSyntaxErrors.Text = "Incorrect number of params please input numbers";
+                            break;
+                    case "run":
+                        LongInput.LongInputCommand(longUserInput, shapes, shapeFill, textboxForSyntaxErrors);
                         break;
-                    case "green pen":
-                        shapes.greenPen();
-                        break;
-
-                    case "black pen":
-                        shapes.blackPen();
-                        break;
-
-                    case "yellow pen":
-                        shapes.yellowPen();
-                        break;
-                    case "blue pen":
-                        shapes.bluePen();
-                        break;
-
-                    case "clear":
-                        shapes.clearCanvas();
-                        break;
-
-
-                    case "fill on":
-                        shapeFill = true;
-                        textboxToShowFill.Text = "Fill shape on";
-                        break;
-
-                    case "fill off":
-                        shapeFill = false;
-                        textboxToShowFill.Text = "Fill shape off";
-                        break;
-
-                    case "drwato":
-                        textboxForSyntaxErrors.Text = "Incorrect number of params please input 2 numbers";
-                        break;
-                    case "moveto":
-                        textboxForSyntaxErrors.Text = "Incorrect number of params please input 2 numbers";
-                        break;
-                    case "circle":
-                        textboxForSyntaxErrors.Text = "Incorrect number of params please input 1 numbers";
-                        break;
-                    case "rectangle":
-                        textboxForSyntaxErrors.Text = "Incorrect number of params please input 2 numbers";
-                        break;
-                    case "triangle":
-                        textboxForSyntaxErrors.Text = "Incorrect number of params please input numbers";
-                        break;
-
                     default:
-                        Parser.Method(command, shapes, shapeFill, textboxForSyntaxErrors);
-                        break;
-                }
-
+                            Parser.ParseCommand(userInput, shapes, shapeFill, textboxForSyntaxErrors);
+                            break;
+                    }
+                
                 inputTextbox.Text = "";
                 Refresh();
             }
@@ -101,30 +96,18 @@ namespace ASE_Assignment
             graphics.DrawImageUnscaled(imageoutput, 0, 0);
         }
 
-        private void commandLine_TextChanged(object sender, EventArgs e)
-        {
-
-        }
 
         private void commandLine_MouseClick(object sender, MouseEventArgs e)
         {
             inputTextbox.Text = "";
         }
 
-        private void textboxToShowFill_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private void buttonToLoad_Click(object sender, EventArgs e)
         {
             LoadLongInput.LoadLongCommands(longInputTextbox);
         }
 
-        private void textboxForSyntaxErrors_TextChanged(object sender, EventArgs e)
-        {
-
-        }
 
         private void buttonToSave_Click(object sender, EventArgs e)
         {

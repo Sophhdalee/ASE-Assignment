@@ -48,7 +48,6 @@
             this.inputTextbox.TabIndex = 1;
             this.inputTextbox.Text = "Type Here";
             this.inputTextbox.MouseClick += new System.Windows.Forms.MouseEventHandler(this.commandLine_MouseClick);
-            this.inputTextbox.TextChanged += new System.EventHandler(this.commandLine_TextChanged);
             this.inputTextbox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.commandLine_KeyDown);
             // 
             // longInputTextbox
@@ -60,14 +59,13 @@
             this.longInputTextbox.Size = new System.Drawing.Size(250, 299);
             this.longInputTextbox.TabIndex = 2;
             this.longInputTextbox.Text = "";
-            this.longInputTextbox.TextChanged += new System.EventHandler(this.programInput_TextChanged);
             // 
             // buttonToLoad
             // 
             this.buttonToLoad.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.buttonToLoad.Location = new System.Drawing.Point(616, 314);
+            this.buttonToLoad.Location = new System.Drawing.Point(745, 314);
             this.buttonToLoad.Name = "buttonToLoad";
-            this.buttonToLoad.Size = new System.Drawing.Size(323, 23);
+            this.buttonToLoad.Size = new System.Drawing.Size(194, 23);
             this.buttonToLoad.TabIndex = 3;
             this.buttonToLoad.Text = "Load Image";
             this.buttonToLoad.UseVisualStyleBackColor = false;
@@ -76,9 +74,9 @@
             // buttonToSave
             // 
             this.buttonToSave.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.buttonToSave.Location = new System.Drawing.Point(307, 314);
+            this.buttonToSave.Location = new System.Drawing.Point(567, 314);
             this.buttonToSave.Name = "buttonToSave";
-            this.buttonToSave.Size = new System.Drawing.Size(303, 23);
+            this.buttonToSave.Size = new System.Drawing.Size(162, 23);
             this.buttonToSave.TabIndex = 4;
             this.buttonToSave.Text = "Save Image";
             this.buttonToSave.UseVisualStyleBackColor = false;
@@ -96,7 +94,6 @@
             this.textboxForSyntaxErrors.Size = new System.Drawing.Size(499, 28);
             this.textboxForSyntaxErrors.TabIndex = 5;
             this.textboxForSyntaxErrors.Text = "";
-            this.textboxForSyntaxErrors.TextChanged += new System.EventHandler(this.textboxForSyntaxErrors_TextChanged);
             // 
             // textboxToShowFill
             // 
@@ -104,12 +101,12 @@
             this.textboxToShowFill.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.textboxToShowFill.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textboxToShowFill.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.textboxToShowFill.Location = new System.Drawing.Point(312, 15);
+            this.textboxToShowFill.Location = new System.Drawing.Point(304, 315);
             this.textboxToShowFill.Name = "textboxToShowFill";
             this.textboxToShowFill.Size = new System.Drawing.Size(15, 16);
             this.textboxToShowFill.TabIndex = 6;
             this.textboxToShowFill.Text = "  ";
-            this.textboxToShowFill.Click += new System.EventHandler(this.textboxToShowFill_Click);
+
             // 
             // drawingOutput
             // 
