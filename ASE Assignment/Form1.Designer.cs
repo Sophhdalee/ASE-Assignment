@@ -40,7 +40,7 @@
             // 
             // inputTextbox
             // 
-            this.inputTextbox.BackColor = System.Drawing.Color.Fuchsia;
+            this.inputTextbox.BackColor = System.Drawing.Color.White;
             this.inputTextbox.Font = new System.Drawing.Font("Arial Narrow", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.inputTextbox.Location = new System.Drawing.Point(29, 315);
             this.inputTextbox.Name = "inputTextbox";
@@ -62,7 +62,7 @@
             // 
             // buttonToLoad
             // 
-            this.buttonToLoad.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.buttonToLoad.BackColor = System.Drawing.Color.White;
             this.buttonToLoad.Location = new System.Drawing.Point(745, 314);
             this.buttonToLoad.Name = "buttonToLoad";
             this.buttonToLoad.Size = new System.Drawing.Size(194, 23);
@@ -73,7 +73,7 @@
             // 
             // buttonToSave
             // 
-            this.buttonToSave.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.buttonToSave.BackColor = System.Drawing.Color.White;
             this.buttonToSave.Location = new System.Drawing.Point(567, 314);
             this.buttonToSave.Name = "buttonToSave";
             this.buttonToSave.Size = new System.Drawing.Size(162, 23);
@@ -84,7 +84,7 @@
             // 
             // textboxForSyntaxErrors
             // 
-            this.textboxForSyntaxErrors.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.textboxForSyntaxErrors.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.textboxForSyntaxErrors.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textboxForSyntaxErrors.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textboxForSyntaxErrors.ForeColor = System.Drawing.Color.Red;
@@ -106,11 +106,10 @@
             this.textboxToShowFill.Size = new System.Drawing.Size(15, 16);
             this.textboxToShowFill.TabIndex = 6;
             this.textboxToShowFill.Text = "  ";
-
             // 
             // drawingOutput
             // 
-            this.drawingOutput.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.drawingOutput.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.drawingOutput.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.drawingOutput.Location = new System.Drawing.Point(307, 12);
             this.drawingOutput.Name = "drawingOutput";
@@ -133,6 +132,7 @@
             this.Controls.Add(this.drawingOutput);
             this.Name = "Form1";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.drawingOutput)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

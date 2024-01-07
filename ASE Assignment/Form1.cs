@@ -113,5 +113,10 @@ namespace ASE_Assignment
         {
             SaveLongInput.SaveLongCommands(longInputTextbox);
         }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
