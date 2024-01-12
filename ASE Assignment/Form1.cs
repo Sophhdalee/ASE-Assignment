@@ -60,6 +60,7 @@ namespace ASE_Assignment
                         case "blue pen":
                             shapes.bluePen();
                             break;
+                    // clear canvas
                         case "clear":
                             shapes.clearCanvas();
                             break;
